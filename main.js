@@ -22,6 +22,7 @@ const generateHtml = (data) => {
   for (item of data.releases){
   var image = document.createElement("img");
   image.setAttribute("src", item.basic_information.cover_image);
+
   var node = document.createElement("LI");
 
   document.querySelector('.gallery').appendChild(image)
