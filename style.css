@@ -1,0 +1,24 @@
+div.gallery {
+  border: 1px;
+}
+
+div.gallery img:hover {
+  opacity: 80%;
+}
+
+#responsive img{
+  margin: 0px 0px 2px 2px;
+  width: 24.8%;
+}
+
+@media (max-width: 700px) {
+  #responsive img{
+    width: 33.3%;
+  }
+}
+
+@media (max-width: 500px) {
+  #responsive img {
+    width: 100%;
+  }
+}
