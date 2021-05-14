@@ -11,15 +11,23 @@ div.gallery img:hover {
   height: 24.3vw;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1800px) {
   #responsive img{
-    width: 32.6vw;
-    height: 32.6vw;
+    width: 32.5vw;
+    height: 32.5vw;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1200px) {
+  #responsive img{
+    width: 46vw;
+    height: 46vw;
+  }
+}
+
+@media (max-width: 600px) {
   #responsive img {
-    width: 100%;
+    width: 96vw;
+    height: 96vw;
   }
 }
