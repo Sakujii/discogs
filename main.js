@@ -81,20 +81,6 @@ const generateHtml = (data) => {
     document.querySelector('.gallery').appendChild(image);
     document.querySelector('.gallery').appendChild(modal);
     id = id + 1;
-//    fetch("https://api.discogs.com/masters/24497",{mode:"no-cors"})
-//    .then((master) => console.log(master.json()))
 
-    if (master_url !== null){
-        fetch(master_url,{
-          headers: {
-            "Authorization": "Discogs token=MIQcoABJKleapiAIbKTsSDqdFYMiEHbKHqZMBhVg",
-            "User-Agent": "Putzikki",
-            "Access-Control-Allow-Origin": "file:///Users/Saku/discogs/index.html",
-            "Access-Control-Allow-Methods": "GET",
-            "Access-Control-Allow-Headers": "access-control-allow-origin, Authorization",
-          }
-        })
-        .then((res) => console.log(res.json()))
-      }
   }
 }
