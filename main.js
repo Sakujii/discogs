@@ -34,7 +34,7 @@ function popUp(release, master, modal, close, event){
 var id = 0;
 const generateHtml = (data) => {
 
-  console.log(data);
+  //console.log(data);
   for (var item of data.releases){
     var rdata = item.basic_information;
     var release_url = rdata.resource_url;
@@ -94,7 +94,7 @@ const generateHtml = (data) => {
             "Access-Control-Allow-Headers": "access-control-allow-origin, Authorization",
           }
         })
+        .then((res) => console.log(res.json()))
       }
-      .then((res) => console.log(res.json()))
   }
 }
