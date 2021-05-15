@@ -94,8 +94,7 @@ const generateHtml = (data) => {
             "Access-Control-Allow-Headers": "access-control-allow-origin, Authorization",
           }
         })
-    }
-    //.then((res) => res.json())
-    //console.log(res)
+      }
+      .then((res) => console.log(res.json()))
   }
 }
