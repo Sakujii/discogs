@@ -1,3 +1,5 @@
+//Fetching the data throught Discogs API
+
 const request_token = "MIQcoABJKleapiAIbKTsSDqdFYMiEHbKHqZMBhVg"
 //fetch('https://api.discogs.com/oauth/MIQcoABJKleapiAIbKTsSDqdFYMiEHbKHqZMBhVg')
 
@@ -14,10 +16,11 @@ fetch('https://api.discogs.com//users/putzikki/collection/folders/0/releases?sor
     }
     return res;
   })
+  // Creating JSON object
   .then((data) => data.json())
   .then((collection) => generateHtml(collection))
 
-
+// Handling windows
 function popUp(release, master, modal, close, event){
   modal.style.display = "block";
 
@@ -34,11 +37,13 @@ function popUp(release, master, modal, close, event){
 var id = 0;
 const generateHtml = (data) => {
 
-  //console.log(data);
+// Handling data
+  console.log(data);
   for (var item of data.releases){
     var rdata = item.basic_information;
     var release_url = rdata.resource_url;
     var master_url = rdata.master_url;
+
 
     var image = document.createElement("img");
     image.setAttribute("src", rdata.cover_image);
@@ -58,17 +63,29 @@ const generateHtml = (data) => {
     title.innerHTML = rdata.artists[0].name + " - " + rdata.title;
 
     var year = document.createElement("p");
-    year.innerHTML = "Release Year: " + rdata.release_year;
+    year.setAttribute("class", "info");
+    if (rdata.year === 0){
+      year.innerHTML = "Release year unknown";
+    }
+    else{
+    year.innerHTML = rdata.year;
+    }
 
     var genres = document.createElement("p");
-    genres.innerHTML = "Genres: " + rdata.genres[0] + ", " + rdata.genres[1];
+    genres.setAttribute("class", "info");
+
+    if(rdata.genres[1] !== undefined){
+      genres.innerHTML = rdata.genres[0] + ", " + rdata.genres[1];
+    }
+    else{
+      genres.innerHTML = rdata.genres[0];
+    }
 
     var close = document.createElement("div");
     var closeSymbol = document.createTextNode("\u00D7");
     close.setAttribute("class", "close");
 
     close.appendChild(closeSymbol);
-    releaseContent.appendChild(image);
     releaseContent.appendChild(title);
     releaseContent.appendChild(year);
     releaseContent.appendChild(genres);
@@ -83,4 +100,4 @@ const generateHtml = (data) => {
     id = id + 1;
 
   }
-}
+};

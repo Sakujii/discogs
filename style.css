@@ -11,25 +11,12 @@ div.gallery img:hover {
   height: 24.3vw;
 }
 
-@media (max-width: 1800px) {
-  #responsive img{
-    width: 32.5vw;
-    height: 32.5vw;
-  }
-}
-
-@media (max-width: 1100px) {
-  #responsive img {
-    width: 96vw;
-    height: 96vw;
-  }
-}
 
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 150px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -44,8 +31,9 @@ div.gallery img:hover {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: fit-content;
   border-radius: 8px;
+  text-align: center;
 }
 
 .close {
@@ -69,4 +57,25 @@ div.gallery img:hover {
   font-size: 50px;
   font-weight: bold;
   font-family: garamond;
+}
+
+.info{
+  font-size: 25px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1800px) {
+  #responsive img{
+    width: 32.5vw;
+    height: 32.5vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  #responsive img {
+    width: 96vw;
+    height: 96vw;
+  }
 }
