@@ -5,6 +5,16 @@ div.gallery img:hover {
   opacity: 80%;
 }
 
+footer{
+  text-align: center;
+  font-family: "Courier New", monospace;
+  margin: 20px 0 20px 0;
+}
+
+p{
+  margin: 5px 0 0 0;
+}
+
 #responsive img{
   margin: 0px 0px 0px 4px;
   width: 24.3vw;
